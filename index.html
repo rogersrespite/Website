@@ -387,13 +387,13 @@
 </section>
 <section class="booking" id="booking" aria-labelledby="booking-title">
 <div class="container">
- <div class="section-intro"><p class="eyebrow">Getting started</p><h2 id="booking-title">Book a consultation or request support.</h2><p class="lead">Start with a free, no-obligation 30-minute conversation. Phone and video consultations can be booked online once the calendar is connected. In-person visits and paid services are confirmed individually.</p></div>
+ <div class="section-intro"><p class="eyebrow">Getting started</p><h2 id="booking-title">Book a consultation or request support.</h2><p class="lead">Start with a free, no-obligation 30-minute conversation. Phone consultations can be booked online. Video and in-person arrangements can be requested below. In-person visits and paid services are confirmed individually.</p></div>
  <div class="booking-layout">
   <div class="booking-panel">
    <h3>Free 30-minute consultation</h3>
    <p>Choose a phone call, Google Meet, or an in-person conversation at your home or a mutually agreed public place.</p>
-   <p class="booking-hint"><strong>Phone and Google Meet:</strong> Instant booking will become available when your Google Calendar appointment link is added. Until then, please use the request form.</p>
-   <!-- SETUP: Replace BOOKING_CALENDAR_URL in the script with your published Google Calendar appointment scheduling URL. -->
+   <p class="booking-hint"><strong>Phone consultations:</strong> Check available times and book using Google Calendar. For Google Meet, in-person consultations, or paid services, please use the request form unless those options are shown on the calendar booking page.</p>
+   <!-- Google Calendar appointment schedule link. -->
    <a id="calendar-booking-link" class="button primary" href="#booking-request" hidden>View live availability</a>
    <p class="booking-note">In-person consultations require confirmation of travel and meeting location. Please do not include sensitive health information in your initial request.</p>
   </div>
@@ -479,8 +479,8 @@
 </footer>
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
-    // Add your published Google Calendar appointment schedule URL here when ready.
-    const BOOKING_CALENDAR_URL = '';
+    // Published Google Calendar appointment schedule URL.
+    const BOOKING_CALENDAR_URL = 'https://calendar.app.google/bK4yvYQYsk9VH51j9';
     const calendarLink = document.getElementById('calendar-booking-link');
     if (/^https:\/\//.test(BOOKING_CALENDAR_URL)) { calendarLink.href = BOOKING_CALENDAR_URL; calendarLink.hidden = false; }
     const meetingInputs = document.querySelectorAll('input[name="meeting-format"]');
