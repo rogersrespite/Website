@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en-CA">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Rogers Respite and Community Services offers respite, community support, and non-psychotherapy social work services for youth, adults, seniors and families in Chatham-Kent, Ontario. Led by Evan Rogers, MSW, RSW.">
-  <title>Rogers Respite and Community Services | Chatham-Kent</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+<meta content="Rogers Respite and Community Services offers respite, community support, and non-psychotherapy social work services for youth, adults, seniors and families in Chatham-Kent, Ontario. Led by Evan Rogers, MSW, RSW." name="description"/>
+<title>Rogers Respite and Community Services | Chatham-Kent</title>
+<style>
     :root {
       /* BRAND COLOURS — change these three values to update the site. */
       --blue: #2e78a9;
@@ -105,16 +106,16 @@
     .service-icon svg { width: 24px; height: 24px; }
     .service-card p { font-size: 14px; color: var(--muted); line-height: 1.75; margin: 0; }
 
-    /* SOCIAL WORK */
-    .social-work { background: linear-gradient(145deg, #f5fafc, #eaf5fb); }
-    .social-work-layout { display: grid; grid-template-columns: 1.35fr .85fr; gap: 22px; align-items: stretch; }
-    .social-work-panel, .social-work-aside { border: 1px solid var(--border); background: white; border-radius: var(--radius); padding: 32px; }
-    .support-list { margin: 18px 0 0; padding-left: 22px; columns: 2; column-gap: 32px; color: var(--ink); font-size: 14px; }
-    .support-list li { margin: 0 0 13px; break-inside: avoid; }
-    .social-work-aside .rate-price { margin-bottom: 18px; }
-    .social-work-aside p:not(.eyebrow) { color: var(--muted); font-size: 14px; }
-    .scope-note { padding: 17px; background: var(--sky); border-left: 4px solid var(--blue); border-radius: 8px; color: var(--navy); font-size: 14px; margin: 22px 0; }
-    .social-work-aside .button { width: 100%; }
+    /* FOUR-CARD SERVICES GRID */
+    .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .service-card { display: flex; flex-direction: column; }
+    .service-card .service-link { display: inline-block; margin-top: 14px; font-weight: 700; font-size: 13px; color: var(--blue-dark); text-underline-offset: 3px; }
+    .service-card .scope-small { margin-top: 13px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 13px; }
+    .social-rate { background: var(--sky); border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; margin-top: 22px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .social-rate strong { font-size: 20px; color: var(--navy); }
+    .social-rate p { font-size: 13px; color: var(--muted); margin: 4px 0 0; }
+    .social-rate .button { flex-shrink: 0; }
+    @media(max-width:760px) { .social-rate { align-items: stretch; flex-direction: column; } .social-rate .button { width: 100%; } }
 
     /* RATES */
     .rates { background: #fff; }
@@ -219,243 +220,204 @@
   </style>
 </head>
 <body>
-  <!-- Reusable logo artwork. The colour comes from --blue in CSS above. -->
-  <svg class="sr-only" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><symbol id="sun-logo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="19" fill="none" stroke="currentColor" stroke-width="6"/><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="5.5"><path d="M50 5v15M50 80v15M5 50h15M80 50h15M18.2 18.2l10.6 10.6M71.2 71.2l10.6 10.6M81.8 18.2L71.2 28.8M28.8 71.2L18.2 81.8"/></g></symbol></svg>
-  <a class="skip-link" href="#main">Skip to content</a>
+<!-- Reusable logo artwork. The colour comes from --blue in CSS above. -->
+<svg aria-hidden="true" class="sr-only" xmlns="http://www.w3.org/2000/svg"><symbol id="sun-logo" viewbox="0 0 100 100"><circle cx="50" cy="50" fill="none" r="19" stroke="currentColor" stroke-width="6"></circle><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="5.5"><path d="M50 5v15M50 80v15M5 50h15M80 50h15M18.2 18.2l10.6 10.6M71.2 71.2l10.6 10.6M81.8 18.2L71.2 28.8M28.8 71.2L18.2 81.8"></path></g></symbol></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="Rogers Respite and Community Services, back to top" class="brand" href="#top">
+<svg aria-hidden="true" class="brand-icon"><use href="#sun-logo"></use></svg>
+<span class="brand-text">Rogers Respite<small>AND COMMUNITY SERVICES</small></span>
+</a>
+<nav aria-label="Main navigation" class="site-nav">
+<a href="#about">About</a>
+<a href="#services">Services</a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="Rogers Respite and Community Services, back to top">
-        <svg class="brand-icon" aria-hidden="true"><use href="#sun-logo"></use></svg>
-        <span class="brand-text">Rogers Respite<small>AND COMMUNITY SERVICES</small></span>
-      </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#social-work">Social Work</a>
-        <a href="#rates">Rates</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="button primary header-cta" href="tel:+15483961616">Call 548-396-1616</a>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Registered Social Worker · Chatham-Kent, Ontario</p>
-          <h1 id="hero-title">Thoughtful respite.<br>Meaningful connection.</h1>
-          <p class="lead">Person-centred respite, community support and social work services for youth, adults and seniors, including people living with disabilities. Meaningful support for individuals, families and caregivers.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="#rates">Explore rates
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-            </a>
-            <a class="button secondary" href="#contact">Get in touch</a>
-          </div>
-          <div class="hero-notes">
-            <span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg> MSW, RSW-led</span>
-            <span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg> Flexible hourly options</span>
-            <span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg> Community-focused</span>
-          </div>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="orbit"></div><div class="orbit two"></div>
-          <div class="orbit three"><svg class="hero-sun"><use href="#sun-logo"></use></svg></div>
-          <svg class="little-star a" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M2 12h20"/></svg>
-          <svg class="little-star b" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M2 12h20"/></svg>
-          <svg class="little-star c" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M2 12h20"/></svg>
-          <div class="art-label"><strong>Space to recharge.</strong><span>Connection, dignity and a caring presence.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" aria-labelledby="about-title">
-      <div class="container about-grid">
-        <!-- PHOTO: profile.jpg is included in the website files. Replace that image to update your photo. -->
-        <div class="portrait">
-          <img src="profile.jpg" alt="Evan Rogers holding framed Bachelor and Master of Social Work diplomas" width="1200" height="1600" loading="lazy" onerror="this.remove()">
-          <div class="portrait-placeholder" aria-label="Photo placeholder">
-            <svg viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><circle cx="50" cy="30" r="17"/><path d="M17 85c2-22 15-34 33-34s31 12 33 34"/></svg>
-            <strong>Your photo goes here</strong>
-            <span>Add a file named <b>profile.jpg</b><br>to your GitHub repository.</span>
-          </div>
-          <div class="portrait-badge"><strong>Evan Rogers, MSW, RSW</strong><span>Registered Social Worker</span></div>
-        </div>
-        <div class="about-copy">
-          <p class="eyebrow">Meet the person behind the service</p>
-          <h2 id="about-title">Hello, I'm Evan.</h2>
-          <!-- EDIT ABOUT ME: Replace the next two paragraphs with your own biography. -->
-          <p>I'm Evan Rogers, a Registered Social Worker with a Master of Social Work. Through Rogers Respite and Community Services, I aim to provide welcoming, respectful support built around each person's interests, routines and individuality.</p>
-          <p>I believe respite can be more than a break in the day. It can create opportunities for connection, conversation and enjoyable activities while giving family caregivers time for their own needs.</p>
-          <!-- END EDITABLE ABOUT ME -->
-          <div class="credential">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+<a href="#rates">Rates</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+</nav>
+<a class="button primary header-cta" href="tel:+15483961616">Call 548-396-1616</a>
+</div>
+</header>
+<main id="main">
+<section aria-labelledby="hero-title" class="hero" id="top">
+<div class="container hero-grid">
+<div class="hero-copy">
+<p class="eyebrow">Registered Social Worker · Chatham-Kent, Ontario</p>
+<h1 id="hero-title">Thoughtful respite.<br/>Meaningful connection.</h1>
+<p class="lead">Person-centred respite, community support and social work services for youth, adults and seniors, including people living with disabilities. Meaningful support for individuals, families and caregivers.</p>
+<div class="hero-actions">
+<a class="button primary" href="#rates">Explore rates
+              <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>
+</a>
+<a class="button secondary" href="#contact">Get in touch</a>
+</div>
+<div class="hero-notes">
+<span><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg> MSW, RSW-led</span>
+<span><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg> Flexible hourly options</span>
+<span><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg> Community-focused</span>
+</div>
+</div>
+<div aria-hidden="true" class="hero-art">
+<div class="orbit"></div><div class="orbit two"></div>
+<div class="orbit three"><svg class="hero-sun"><use href="#sun-logo"></use></svg></div>
+<svg class="little-star a" fill="none" height="25" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="25"><path d="M12 2v20M2 12h20"></path></svg>
+<svg class="little-star b" fill="none" height="19" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="19"><path d="M12 2v20M2 12h20"></path></svg>
+<svg class="little-star c" fill="none" height="15" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="15"><path d="M12 2v20M2 12h20"></path></svg>
+<div class="art-label"><strong>Space to recharge.</strong><span>Connection, dignity and a caring presence.</span></div>
+</div>
+</div>
+</section>
+<section aria-labelledby="about-title" id="about">
+<div class="container about-grid">
+<!-- PHOTO: profile.jpg is included in the website files. Replace that image to update your photo. -->
+<div class="portrait">
+<img alt="Evan Rogers holding framed Bachelor and Master of Social Work diplomas" height="1600" loading="lazy" onerror="this.remove()" src="profile.jpg" width="1200"/>
+<div aria-label="Photo placeholder" class="portrait-placeholder">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3.5" viewbox="0 0 100 100"><circle cx="50" cy="30" r="17"></circle><path d="M17 85c2-22 15-34 33-34s31 12 33 34"></path></svg>
+<strong>Your photo goes here</strong>
+<span>Add a file named <b>profile.jpg</b><br/>to your GitHub repository.</span>
+</div>
+<div class="portrait-badge"><strong>Evan Rogers, MSW, RSW</strong><span>Registered Social Worker</span></div>
+</div>
+<div class="about-copy">
+<p class="eyebrow">Meet the person behind the service</p>
+<h2 id="about-title">Hello, I'm Evan.</h2>
+<!-- EDIT ABOUT ME: Replace the next two paragraphs with your own biography. -->
+<p>I'm Evan Rogers, a Registered Social Worker with a Master of Social Work. Through Rogers Respite and Community Services, I aim to provide welcoming, respectful support built around each person's interests, routines and individuality.</p>
+<p>I believe respite can be more than a break in the day. It can create opportunities for connection, conversation and enjoyable activities while giving family caregivers time for their own needs.</p>
+<!-- END EDITABLE ABOUT ME -->
+<div class="credential">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-4Z"></path><path d="m9 12 2 2 4-4"></path></svg>
             MSW · RSW · Registration #843082
           </div>
-        </div>
-      </div>
-    </section>
+</div>
+</div>
+</section>
+<section aria-labelledby="services-title" class="services" id="services">
+<div class="container">
+<div class="section-intro">
+<p class="eyebrow">How I can help</p>
+<h2 id="services-title">Support centred on people.</h2>
+<p class="lead">Flexible respite, community engagement and professional social work support for youth, adults, seniors and families, including people living with disabilities.</p>
+</div>
+<div class="card-grid">
+<article class="service-card">
+<div class="service-icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+<h3>Companionship</h3>
+<p>One-on-one conversation, shared interests and engaging time together in a comfortable, respectful environment.</p>
+</article>
+<article class="service-card">
+<div class="service-icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z"></path></svg></div>
+<h3>Community engagement</h3>
+<p>Meaningful activities and community outings based on personal interests, comfort and agreed-upon plans.</p>
+</article>
+<article class="service-card">
+<div class="service-icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"></path></svg></div>
+<h3>Caregiver respite</h3>
+<p>Dedicated time for caregivers to attend to appointments, errands, rest or other priorities.</p>
+</article>
+<article class="service-card"><div class="service-icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 21s-8-4-8-11a8 8 0 0 1 16 0c0 7-8 11-8 11Z"></path><path d="M9 10h6M12 7v6"></path></svg></div><h3>Social work services</h3><p>Supportive counselling, psychosocial needs assessment, care planning, advocacy, family support, referrals and help navigating community services and life transitions.</p><p class="scope-small"><strong>Scope:</strong> I do not provide psychotherapy.</p><a class="service-link" href="#social-work-rate">View social work pricing →</a></article></div>
+</div>
+</section>
 
-    <section class="services" id="services" aria-labelledby="services-title">
-      <div class="container">
-        <div class="section-intro">
-          <p class="eyebrow">How I can help</p>
-          <h2 id="services-title">Support centred on people.</h2>
-          <p class="lead">Flexible support for youth, adults and seniors, including individuals living with disabilities, and their families and caregivers.</p>
-        </div>
-        <div class="card-grid">
-          <article class="service-card">
-            <div class="service-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-            <h3>Companionship</h3>
-            <p>One-on-one conversation, shared interests and engaging time together in a comfortable, respectful environment.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z"/></svg></div>
-            <h3>Community engagement</h3>
-            <p>Meaningful activities and community outings based on personal interests, comfort and agreed-upon plans.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></div>
-            <h3>Caregiver respite</h3>
-            <p>Dedicated time for caregivers to attend to appointments, errands, rest or other priorities.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="social-work" aria-labelledby="social-work-title" class="social-work">
-      <div class="container">
-        <div class="section-intro">
-          <p class="eyebrow">Professional social work support</p>
-          <h2 id="social-work-title">Practical guidance. Compassionate support.</h2>
-          <p class="lead">As a Registered Social Worker (MSW, RSW), I offer person-centred social work services for youth, adults, seniors and families, including people living with disabilities.</p>
-        </div>
-        <div class="social-work-layout">
-          <div class="social-work-panel">
-            <h3>How I can help</h3>
-            <ul class="support-list">
-              <li>Supportive counselling and emotional support</li>
-              <li>Psychosocial needs assessment and goal setting</li>
-              <li>Care planning and service coordination</li>
-              <li>Community resource navigation and referrals</li>
-              <li>Disability-related support and advocacy</li>
-              <li>Caregiver education and family support</li>
-              <li>Help navigating health and social service systems</li>
-              <li>Support with life transitions and problem-solving</li>
-            </ul>
-          </div>
-          <aside class="social-work-aside">
-            <p class="eyebrow">Social work rate</p>
-            <div class="rate-price">$60<span>/ hour</span></div>
-            <p>Social work services are separate from the $30/hour respite and community support rate.</p>
-            <div class="scope-note"><strong>Scope of services:</strong> I do not provide psychotherapy. My social work services focus on practical, emotional, psychosocial and community-based support.</div>
-            <a class="button primary" href="#contact">Request a free consultation</a>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="rates" id="rates" aria-labelledby="rates-title">
-      <div class="container">
-        <div class="rates-heading">
-          <div class="section-intro">
-            <p class="eyebrow">Simple, transparent pricing</p>
-            <h2 id="rates-title">Rates & packages.</h2>
-            <p class="lead">Respite and community support starts at $30/hour. Book a 6- or 9-hour package and save $5 per hour on those services. Social work support is $60/hour.</p>
-          </div>
-          <p class="rate-message">All prices are in Canadian dollars. Contact me to discuss scheduling and package details.</p>
-        </div>
-        <div class="rate-grid">
-          <article class="rate-card">
-            <div class="rate-category">Standard hourly rate</div>
-            <div class="rate-price">$30<span>/ hour</span></div>
-            <p class="rate-description">Respite and community support without selecting a package.</p>
-            <div class="rate-divider"></div>
-            <div class="rate-total"><strong>$30 per hour</strong><br>Pay the standard hourly rate.</div>
-            <a class="button secondary" href="#contact">Ask about availability</a>
-          </article>
-          <article class="rate-card package">
-            <div class="rate-category">6-hour package</div>
-            <div class="rate-price">$25<span>/ hour</span></div>
-            <p class="rate-description">Six hours of respite or community support at the discounted rate.</p>
-            <div class="rate-divider"></div>
-            <div class="rate-total"><strong>$150 package total</strong><br><span class="savings">Save $30</span></div>
-            <a class="button primary" href="#contact">Ask about this package</a>
-          </article>
-          <article class="rate-card package">
-            <div class="rate-category">9-hour package</div>
-            <div class="rate-price">$25<span>/ hour</span></div>
-            <p class="rate-description">Nine hours of respite or community support at the discounted rate.</p>
-            <div class="rate-divider"></div>
-            <div class="rate-total"><strong>$225 package total</strong><br><span class="savings">Save $45</span></div>
-            <a class="button primary" href="#contact">Ask about this package</a>
-          </article>
-        </div>
-        <p class="rates-note">Package discounts apply to respite and community support, not social work services. Specific services, scheduling arrangements and any additional costs can be confirmed before booking.</p>
-      </div>
-    </section>
-
-    <section class="faq" id="faq" aria-labelledby="faq-title">
-      <div class="container faq-grid">
-        <div class="section-intro">
-          <p class="eyebrow">Frequently asked questions</p>
-          <h2 id="faq-title">Good questions deserve clear answers.</h2>
-          <p class="lead">Find answers to common questions about respite services, activities, packages and getting started.</p>
-        </div>
-        <!-- EDIT FAQ: Replace the question and answer text inside each <details> below. Duplicate a <details> block to add another question. -->
-        <div class="faq-list">
-          <details>
-            <summary>Who can benefit from respite services?</summary>
-            <p class="faq-answer">Youth, adults and seniors who benefit from companionship or support, including people living with disabilities or dementia, and caregivers who need a break.</p>
-          </details>
-          <details>
-            <summary>What activities can be included in a visit?</summary>
-            <p class="faq-answer">Activities are tailored to individual interests and needs and may include conversation, walks, recreational activities, scenic drives, and community outings.</p>
-          </details>
-          <details>
-            <summary>How do the 6- and 9-hour packages work?</summary>
-            <p class="faq-answer">Respite and community support is $30/hour. Save $5 per hour with a 6-hour package ($150) or 9-hour package ($225). These packages do not apply to social work services ($60/hour).</p>
-          </details>
-          <details>
-            <summary>How do I get started?</summary>
-            <p class="faq-answer">Start with a free 30-minute consultation to discuss your needs and whether the services are a good fit. Call 548-396-1616 or email evan@rogersrespite.ca.</p>
-          </details>
-          <details>
-            <summary>Do you provide psychotherapy?</summary>
-            <p class="faq-answer">No. I do not provide psychotherapy. My social work services include supportive counselling, psychosocial support, care planning, advocacy and community resource navigation.</p>
-          </details>
-        </div>
-        <!-- END EDITABLE FAQ -->
-      </div>
-    </section>
-
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <div class="contact-panel">
-          <div>
-            <p class="eyebrow">Let's connect</p>
-            <h2 id="contact-title">Let's talk about the support you're looking for.</h2>
-            <p>Book a free 30-minute consultation to discuss your needs and see whether my services are a good fit. Call or email to inquire about availability in Chatham-Kent.</p>
-          </div>
-          <div class="contact-actions">
-            <a class="button" href="tel:+15483961616"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.6 3a2 2 0 0 1-.6 1.9L7.8 9.9a16 16 0 0 0 6.3 6.3l1.3-1.3a2 2 0 0 1 1.9-.6l3 .6a2 2 0 0 1 1.7 2Z"/></svg> Call 548-396-1616</a>
-            <a class="button" href="mailto:evan@rogersrespite.ca"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m2 6 10 7 10-7"/></svg> Email me</a>
-            <a class="contact-email" href="mailto:evan@rogersrespite.ca">evan@rogersrespite.ca</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="current-year">2026</span> Rogers Respite and Community Services. Chatham-Kent, Ontario.</p>
-      <p>Evan Rogers, MSW, RSW · Registration #843082 · <a href="tel:+15483961616">548-396-1616</a> · <a href="mailto:evan@rogersrespite.ca">Email</a> · <a href="https://www.instagram.com/rogersrespite/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="#top">Back to top ↑</a></p>
-    </div>
-  </footer>
-  <script>
+<section aria-labelledby="rates-title" class="rates" id="rates">
+<div class="container">
+<div class="rates-heading">
+<div class="section-intro">
+<p class="eyebrow">Simple, transparent pricing</p>
+<h2 id="rates-title">Rates &amp; packages.</h2>
+<p class="lead">Respite and community support starts at $30/hour. Book a 6- or 9-hour package and save $5 per hour on those services. Social work support is $60/hour.</p>
+</div>
+<p class="rate-message">All prices are in Canadian dollars. Contact me to discuss scheduling and package details.</p>
+</div>
+<div class="rate-grid">
+<article class="rate-card">
+<div class="rate-category">Standard hourly rate</div>
+<div class="rate-price">$30<span>/ hour</span></div>
+<p class="rate-description">Respite and community support without selecting a package.</p>
+<div class="rate-divider"></div>
+<div class="rate-total"><strong>$30 per hour</strong><br/>Pay the standard hourly rate.</div>
+<a class="button secondary" href="#contact">Ask about availability</a>
+</article>
+<article class="rate-card package">
+<div class="rate-category">6-hour package</div>
+<div class="rate-price">$25<span>/ hour</span></div>
+<p class="rate-description">Six hours of respite or community support at the discounted rate.</p>
+<div class="rate-divider"></div>
+<div class="rate-total"><strong>$150 package total</strong><br/><span class="savings">Save $30</span></div>
+<a class="button primary" href="#contact">Ask about this package</a>
+</article>
+<article class="rate-card package">
+<div class="rate-category">9-hour package</div>
+<div class="rate-price">$25<span>/ hour</span></div>
+<p class="rate-description">Nine hours of respite or community support at the discounted rate.</p>
+<div class="rate-divider"></div>
+<div class="rate-total"><strong>$225 package total</strong><br/><span class="savings">Save $45</span></div>
+<a class="button primary" href="#contact">Ask about this package</a>
+</article>
+</div><div class="social-rate" id="social-work-rate"><div><strong>Social work services — $60/hour</strong><p>Supportive counselling, assessments, care planning, advocacy and resource navigation. Not psychotherapy. Respite package discounts do not apply.</p></div><a class="button secondary" href="#contact">Ask about social work</a></div>
+<p class="rates-note">Package discounts apply to respite and community support, not social work services. Specific services, scheduling arrangements and any additional costs can be confirmed before booking.</p>
+</div>
+</section>
+<section aria-labelledby="faq-title" class="faq" id="faq">
+<div class="container faq-grid">
+<div class="section-intro">
+<p class="eyebrow">Frequently asked questions</p>
+<h2 id="faq-title">Good questions deserve clear answers.</h2>
+<p class="lead">Find answers to common questions about respite services, activities, packages and getting started.</p>
+</div>
+<!-- EDIT FAQ: Replace the question and answer text inside each <details> below. Duplicate a <details> block to add another question. -->
+<div class="faq-list">
+<details>
+<summary>Who can benefit from respite services?</summary>
+<p class="faq-answer">Youth, adults and seniors who benefit from companionship or support, including people living with disabilities or dementia, and caregivers who need a break.</p>
+</details>
+<details>
+<summary>What activities can be included in a visit?</summary>
+<p class="faq-answer">Activities are tailored to individual interests and needs and may include conversation, walks, recreational activities, scenic drives, and community outings.</p>
+</details>
+<details>
+<summary>How do the 6- and 9-hour packages work?</summary>
+<p class="faq-answer">Respite and community support is $30/hour. Save $5 per hour with a 6-hour package ($150) or 9-hour package ($225). These packages do not apply to social work services ($60/hour).</p>
+</details>
+<details>
+<summary>How do I get started?</summary>
+<p class="faq-answer">Start with a free 30-minute consultation to discuss your needs and whether the services are a good fit. Call 548-396-1616 or email evan@rogersrespite.ca.</p>
+</details>
+<details>
+<summary>Do you provide psychotherapy?</summary>
+<p class="faq-answer">No. I do not provide psychotherapy. My social work services include supportive counselling, psychosocial support, care planning, advocacy and community resource navigation.</p>
+</details>
+</div>
+<!-- END EDITABLE FAQ -->
+</div>
+</section>
+<section aria-labelledby="contact-title" class="contact" id="contact">
+<div class="container">
+<div class="contact-panel">
+<div>
+<p class="eyebrow">Let's connect</p>
+<h2 id="contact-title">Let's talk about the support you're looking for.</h2>
+<p>Book a free 30-minute consultation to discuss your needs and see whether my services are a good fit. Call or email to inquire about availability in Chatham-Kent.</p>
+</div>
+<div class="contact-actions">
+<a class="button" href="tel:+15483961616"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.6 3a2 2 0 0 1-.6 1.9L7.8 9.9a16 16 0 0 0 6.3 6.3l1.3-1.3a2 2 0 0 1 1.9-.6l3 .6a2 2 0 0 1 1.7 2Z"></path></svg> Call 548-396-1616</a>
+<a class="button" href="mailto:evan@rogersrespite.ca"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="m2 6 10 7 10-7"></path></svg> Email me</a>
+<a class="contact-email" href="mailto:evan@rogersrespite.ca">evan@rogersrespite.ca</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-inner">
+<p>© <span id="current-year">2026</span> Rogers Respite and Community Services. Chatham-Kent, Ontario.</p>
+<p>Evan Rogers, MSW, RSW · Registration #843082 · <a href="tel:+15483961616">548-396-1616</a> · <a href="mailto:evan@rogersrespite.ca">Email</a> · <a href="https://www.instagram.com/rogersrespite/" rel="noopener noreferrer" target="_blank">Instagram</a> · <a href="#top">Back to top ↑</a></p>
+</div>
+</footer>
+<script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
 </body>
