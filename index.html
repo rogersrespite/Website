@@ -240,6 +240,9 @@
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 5px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
+    .calendar-embed-shell { margin: 22px 0 12px; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--pale); }
+    .calendar-embed-shell iframe { display: block; width: 100%; height: 660px; border: 0; background: white; }
+    @media(max-width:760px) { .calendar-embed-shell iframe { height: 720px; } }
   </style>
 </head>
 <body>
@@ -393,8 +396,12 @@
    <h3>Free 30-minute consultation</h3>
    <p>Choose a phone call, Google Meet, or an in-person conversation at your home or a mutually agreed public place.</p>
    <p class="booking-hint"><strong>Phone consultations:</strong> Check available times and book using Google Calendar. For Google Meet, in-person consultations, or paid services, please use the request form unless those options are shown on the calendar booking page.</p>
-   <!-- Google Calendar appointment schedule link. -->
-   <a id="calendar-booking-link" class="button primary" href="#booking-request" hidden>View live availability</a>
+   <!-- Official Google Calendar Appointment Scheduling inline embed. -->
+   <div class="calendar-embed-shell">
+    <iframe title="Book a free 30-minute consultation with Rogers Respite" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2p_ugeUbHkRsOZ3J-W8iwuFhKLKPEnKWV3IBjGig17cOnhX74IVSuTsOjKdkQXgX8um69-xQTB?gv=true" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
+   </div>
+   <p class="booking-note">If the calendar does not load, open the booking calendar directly using the button below.</p>
+   <a id="calendar-booking-link" class="button primary" href="#booking-request" hidden target="_blank" rel="noopener noreferrer">Open booking calendar</a>
    <p class="booking-note">In-person consultations require confirmation of travel and meeting location. Please do not include sensitive health information in your initial request.</p>
   </div>
   <div class="booking-panel" id="booking-request">
