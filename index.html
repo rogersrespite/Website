@@ -139,7 +139,7 @@
 
     /* BOOKING */
     .booking { background: var(--pale); border-top: 1px solid var(--border); }
-    .booking-layout { display:grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items:start; }
+    .booking-layout { display:grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items:start; }
     .booking-panel { background:#fff; border:1px solid var(--border); border-radius:18px; padding:clamp(22px,3vw,34px); box-shadow:var(--shadow); }
     .booking-panel h3 { margin-bottom:12px; }
     .booking-panel p { color:var(--muted); font-size:14px; }
@@ -147,6 +147,7 @@
     .booking-panel input, .booking-panel select, .booking-panel textarea { width:100%; border:1px solid #bfd4df; border-radius:9px; padding:12px; font:inherit; color:var(--ink); background:#fff; }
     .booking-panel input:focus, .booking-panel select:focus, .booking-panel textarea:focus { outline:2px solid var(--blue); outline-offset:1px; }
     .booking-panel .button { cursor:pointer; border:0; margin-top:18px; }
+    #booking-price-summary { background:var(--sky); color:var(--blue-dark); padding:13px 15px; border-radius:10px; font-weight:700; font-size:14px; }
     .booking-note { font-size:12px!important; line-height:1.6; margin-top:14px; }
     .booking-choice { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; margin:14px 0; }
     .booking-choice label { margin:0; cursor:pointer; }
@@ -374,7 +375,7 @@
 <p class="rate-description">Six hours of respite or community support at the discounted rate.</p>
 <div class="rate-divider"></div>
 <div class="rate-total"><strong>$150 package total</strong><br/><span class="savings">Save $30</span></div>
-<a class="button primary" href="#booking">Request this package</a>
+<a class="button primary" href="#contact">Ask about this package</a>
 </article>
 <article class="rate-card package">
 <div class="rate-category">9-hour package</div>
@@ -382,49 +383,29 @@
 <p class="rate-description">Nine hours of respite or community support at the discounted rate.</p>
 <div class="rate-divider"></div>
 <div class="rate-total"><strong>$225 package total</strong><br/><span class="savings">Save $45</span></div>
-<a class="button primary" href="#booking">Request this package</a>
+<a class="button primary" href="#contact">Ask about this package</a>
 </article>
-</div><div class="social-rate" id="social-work-rate"><div><strong>Social work services — $60/hour</strong><p>Supportive counselling, assessments, care planning, advocacy and resource navigation. Not psychotherapy. Respite package discounts do not apply.</p></div><a class="button secondary" href="#booking">Request social work</a></div>
+</div><div class="social-rate" id="social-work-rate"><div><strong>Social work services — $60/hour</strong><p>Supportive counselling, assessments, care planning, advocacy and resource navigation. Not psychotherapy. Respite package discounts do not apply.</p></div><a class="button secondary" href="#contact">Ask about social work</a></div>
 <p class="rates-note">Package discounts apply to respite and community support, not social work services. Specific services, scheduling arrangements and any additional costs can be confirmed before booking.</p>
 </div>
 </section>
 <section class="booking" id="booking" aria-labelledby="booking-title">
 <div class="container">
- <div class="section-intro"><p class="eyebrow">Getting started</p><h2 id="booking-title">Book a consultation or request support.</h2><p class="lead">Start with a free, no-obligation 30-minute conversation. Phone consultations can be booked online. Video and in-person arrangements can be requested below. In-person visits and paid services are confirmed individually.</p></div>
+ <div class="section-intro"><p class="eyebrow">Getting started</p><h2 id="booking-title">Book a consultation or request a service.</h2><p class="lead">Start with a free, no-obligation 30-minute conversation. Phone consultations can be booked online. For respite packages, social work support, and in-person visits, contact me to discuss availability and confirm arrangements.</p></div>
  <div class="booking-layout">
   <div class="booking-panel">
    <h3>Free 30-minute consultation</h3>
    <p>Choose a phone call, Google Meet, or an in-person conversation at your home or a mutually agreed public place.</p>
-   <p class="booking-hint"><strong>Phone consultations:</strong> Check available times and book using Google Calendar. For Google Meet, in-person consultations, or paid services, please use the request form unless those options are shown on the calendar booking page.</p>
+   <p class="booking-hint"><strong>Phone consultations:</strong> Check available times and book using Google Calendar. For Google Meet, use the calendar if available. For in-person consultations or paid services, please contact me to arrange an appointment.</p>
    <!-- Official Google Calendar Appointment Scheduling inline embed. -->
    <div class="calendar-embed-shell">
     <iframe title="Book a free 30-minute consultation with Rogers Respite" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2p_ugeUbHkRsOZ3J-W8iwuFhKLKPEnKWV3IBjGig17cOnhX74IVSuTsOjKdkQXgX8um69-xQTB?gv=true" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
    </div>
    <p class="booking-note">If the calendar does not load, open the booking calendar directly using the button below.</p>
-   <a id="calendar-booking-link" class="button primary" href="#booking-request" hidden target="_blank" rel="noopener noreferrer">Open booking calendar</a>
+   <a id="calendar-booking-link" class="button primary" href="https://calendar.app.google/bK4yvYQYsk9VH51j9" target="_blank" rel="noopener noreferrer">Open booking calendar</a>
    <p class="booking-note">In-person consultations require confirmation of travel and meeting location. Please do not include sensitive health information in your initial request.</p>
   </div>
-  <div class="booking-panel" id="booking-request">
-   <h3>Request an appointment</h3>
-   <p>Send your preferred appointment details. Requests are not confirmed until you receive a response.</p>
-   <form id="booking-request-form">
-    <div class="booking-fields">
-     <div><label for="client-name">Your name *</label><input id="client-name" name="name" required autocomplete="name" maxlength="100"></div>
-     <div><label for="client-email">Email *</label><input id="client-email" name="email" type="email" required autocomplete="email"></div>
-     <div class="full"><label for="client-phone">Phone number *</label><input id="client-phone" name="phone" type="tel" required autocomplete="tel"></div>
-     <div class="full"><label for="request-service">Service *</label><select id="request-service" required><option value="">Choose a service</option><option>Free 30-minute consultation</option><option>Respite &amp; community support — $30/hour</option><option>6-hour respite package — $150</option><option>9-hour respite package — $225</option><option>Social work support — $60/hour (not psychotherapy)</option></select></div>
-     <div class="full"><label>Meeting format *</label><div class="booking-choice"><label><input type="radio" name="meeting-format" value="Phone" checked><span>Phone</span></label><label><input type="radio" name="meeting-format" value="Google Meet"><span>Google Meet</span></label><label><input type="radio" name="meeting-format" value="In person"><span>In person</span></label></div></div>
-     <div class="full" id="location-type-wrap" hidden><label for="location-type">In-person location</label><select id="location-type"><option value="">Choose a location</option><option value="Client home">At my home</option><option value="Public location">Mutually agreed public location</option></select></div>
-     <div class="full" id="home-address-wrap" hidden><label for="home-address">Home visit address *</label><input id="home-address" autocomplete="street-address" placeholder="Street address, city, postal code" maxlength="250"></div>
-     <div class="full" id="public-location-wrap" hidden><label for="public-location">Suggested public meeting location (optional)</label><input id="public-location" placeholder="For example, a library in Chatham-Kent" maxlength="200"></div>
-     <div><label for="preferred-date">Preferred date *</label><input id="preferred-date" type="date" required></div>
-     <div><label for="preferred-time">Preferred time *</label><input id="preferred-time" type="time" required></div>
-     <div class="full"><label for="request-notes">Additional scheduling notes (optional)</label><textarea id="request-notes" rows="3" maxlength="500" placeholder="Scheduling or accessibility arrangements only; no medical details"></textarea></div>
-    </div>
-    <button type="submit" class="button primary">Prepare email request</button>
-    <p class="booking-note">This opens your email application with the request details filled in. You must send the email to complete your request. No appointment is automatically reserved. For privacy, avoid including medical or other sensitive personal information.</p>
-   </form>
-  </div>
+
  </div>
 </div>
 </section>
@@ -486,37 +467,6 @@
 </footer>
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
-    // Published Google Calendar appointment schedule URL.
-    const BOOKING_CALENDAR_URL = 'https://calendar.app.google/bK4yvYQYsk9VH51j9';
-    const calendarLink = document.getElementById('calendar-booking-link');
-    if (/^https:\/\//.test(BOOKING_CALENDAR_URL)) { calendarLink.href = BOOKING_CALENDAR_URL; calendarLink.hidden = false; }
-    const meetingInputs = document.querySelectorAll('input[name="meeting-format"]');
-    const locationType = document.getElementById('location-type');
-    const address = document.getElementById('home-address');
-    const homeWrap = document.getElementById('home-address-wrap');
-    const publicWrap = document.getElementById('public-location-wrap');
-    function updateMeetingFields() {
-      const inPerson = document.querySelector('input[name="meeting-format"]:checked').value === 'In person';
-      document.getElementById('location-type-wrap').hidden = !inPerson;
-      locationType.required = inPerson;
-      if (!inPerson) locationType.value = '';
-      homeWrap.hidden = !(inPerson && locationType.value === 'Client home');
-      publicWrap.hidden = !(inPerson && locationType.value === 'Public location');
-      address.required = !homeWrap.hidden;
-    }
-    meetingInputs.forEach(input => input.addEventListener('change', updateMeetingFields));
-    locationType.addEventListener('change', updateMeetingFields);
-    updateMeetingFields();
-    document.getElementById('preferred-date').min = new Date(Date.now() - new Date().getTimezoneOffset()*60000).toISOString().slice(0,10);
-    document.getElementById('booking-request-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (!this.reportValidity()) return;
-      const val = id => document.getElementById(id).value.trim();
-      const format = document.querySelector('input[name="meeting-format"]:checked').value;
-      const location = format !== 'In person' ? 'Not applicable' : locationType.value === 'Client home' ? 'Client home: ' + val('home-address') : 'Public location: ' + (val('public-location') || 'To be agreed');
-      const lines = ['Appointment request — Rogers Respite & Community Services', '', 'Name: ' + val('client-name'), 'Email: ' + val('client-email'), 'Phone: ' + val('client-phone'), 'Service: ' + val('request-service'), 'Format: ' + format, 'Location: ' + location, 'Preferred date: ' + val('preferred-date'), 'Preferred time: ' + val('preferred-time'), 'Scheduling notes: ' + (val('request-notes') || 'None'), '', 'I understand this is a request, not a confirmed booking.'];
-      window.location.href = 'mailto:evan@rogersrespite.ca?subject=' + encodeURIComponent('Appointment request — Rogers Respite') + '&body=' + encodeURIComponent(lines.join('\n'));
-    });
   </script>
 </body>
 </html>
