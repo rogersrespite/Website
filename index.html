@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Rogers Respite and Community Services offers person-centred respite and community companionship in Chatham-Kent, Ontario. Led by Evan Rogers, MSW, RSW.">
+  <meta name="description" content="Rogers Respite and Community Services offers respite, community support, and non-psychotherapy social work services for youth, adults, seniors and families in Chatham-Kent, Ontario. Led by Evan Rogers, MSW, RSW.">
   <title>Rogers Respite and Community Services | Chatham-Kent</title>
   <style>
     :root {
@@ -104,6 +104,17 @@
     .service-icon { width: 49px; height: 49px; display: flex; justify-content: center; align-items: center; margin-bottom: 24px; border-radius: 13px; color: var(--blue); background: #e9f5fc; }
     .service-icon svg { width: 24px; height: 24px; }
     .service-card p { font-size: 14px; color: var(--muted); line-height: 1.75; margin: 0; }
+
+    /* SOCIAL WORK */
+    .social-work { background: linear-gradient(145deg, #f5fafc, #eaf5fb); }
+    .social-work-layout { display: grid; grid-template-columns: 1.35fr .85fr; gap: 22px; align-items: stretch; }
+    .social-work-panel, .social-work-aside { border: 1px solid var(--border); background: white; border-radius: var(--radius); padding: 32px; }
+    .support-list { margin: 18px 0 0; padding-left: 22px; columns: 2; column-gap: 32px; color: var(--ink); font-size: 14px; }
+    .support-list li { margin: 0 0 13px; break-inside: avoid; }
+    .social-work-aside .rate-price { margin-bottom: 18px; }
+    .social-work-aside p:not(.eyebrow) { color: var(--muted); font-size: 14px; }
+    .scope-note { padding: 17px; background: var(--sky); border-left: 4px solid var(--blue); border-radius: 8px; color: var(--navy); font-size: 14px; margin: 22px 0; }
+    .social-work-aside .button { width: 100%; }
 
     /* RATES */
     .rates { background: #fff; }
@@ -221,11 +232,12 @@
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#social-work">Social Work</a>
         <a href="#rates">Rates</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="button primary header-cta" href="tel:+15193507373">Call 519-350-7373</a>
+      <a class="button primary header-cta" href="tel:+15483961616">Call 548-396-1616</a>
     </div>
   </header>
 
@@ -235,7 +247,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Registered Social Worker · Chatham-Kent, Ontario</p>
           <h1 id="hero-title">Thoughtful respite.<br>Meaningful connection.</h1>
-          <p class="lead">Person-centred respite and community companionship for individuals and families, including those navigating dementia. Support that creates time for caregivers and meaningful experiences for the people they care about.</p>
+          <p class="lead">Person-centred respite, community support and social work services for youth, adults and seniors, including people living with disabilities. Meaningful support for individuals, families and caregivers.</p>
           <div class="hero-actions">
             <a class="button primary" href="#rates">Explore rates
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
@@ -291,7 +303,7 @@
         <div class="section-intro">
           <p class="eyebrow">How I can help</p>
           <h2 id="services-title">Support centred on people.</h2>
-          <p class="lead">Each visit can be shaped around the individual and the needs of their family or caregiver.</p>
+          <p class="lead">Flexible support for youth, adults and seniors, including individuals living with disabilities, and their families and caregivers.</p>
         </div>
         <div class="card-grid">
           <article class="service-card">
@@ -313,13 +325,45 @@
       </div>
     </section>
 
+    <section id="social-work" aria-labelledby="social-work-title" class="social-work">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Professional social work support</p>
+          <h2 id="social-work-title">Practical guidance. Compassionate support.</h2>
+          <p class="lead">As a Registered Social Worker (MSW, RSW), I offer person-centred social work services for youth, adults, seniors and families, including people living with disabilities.</p>
+        </div>
+        <div class="social-work-layout">
+          <div class="social-work-panel">
+            <h3>How I can help</h3>
+            <ul class="support-list">
+              <li>Supportive counselling and emotional support</li>
+              <li>Psychosocial needs assessment and goal setting</li>
+              <li>Care planning and service coordination</li>
+              <li>Community resource navigation and referrals</li>
+              <li>Disability-related support and advocacy</li>
+              <li>Caregiver education and family support</li>
+              <li>Help navigating health and social service systems</li>
+              <li>Support with life transitions and problem-solving</li>
+            </ul>
+          </div>
+          <aside class="social-work-aside">
+            <p class="eyebrow">Social work rate</p>
+            <div class="rate-price">$60<span>/ hour</span></div>
+            <p>Social work services are separate from the $30/hour respite and community support rate.</p>
+            <div class="scope-note"><strong>Scope of services:</strong> I do not provide psychotherapy. My social work services focus on practical, emotional, psychosocial and community-based support.</div>
+            <a class="button primary" href="#contact">Request a free consultation</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section class="rates" id="rates" aria-labelledby="rates-title">
       <div class="container">
         <div class="rates-heading">
           <div class="section-intro">
             <p class="eyebrow">Simple, transparent pricing</p>
             <h2 id="rates-title">Rates & packages.</h2>
-            <p class="lead">Choose what fits your needs. Book a 6- or 9-hour package and save $5 on every hour.</p>
+            <p class="lead">Respite and community support starts at $30/hour. Book a 6- or 9-hour package and save $5 per hour on those services. Social work support is $60/hour.</p>
           </div>
           <p class="rate-message">All prices are in Canadian dollars. Contact me to discuss scheduling and package details.</p>
         </div>
@@ -327,7 +371,7 @@
           <article class="rate-card">
             <div class="rate-category">Standard hourly rate</div>
             <div class="rate-price">$30<span>/ hour</span></div>
-            <p class="rate-description">Straightforward hourly support, without selecting a package.</p>
+            <p class="rate-description">Respite and community support without selecting a package.</p>
             <div class="rate-divider"></div>
             <div class="rate-total"><strong>$30 per hour</strong><br>Pay the standard hourly rate.</div>
             <a class="button secondary" href="#contact">Ask about availability</a>
@@ -335,7 +379,7 @@
           <article class="rate-card package">
             <div class="rate-category">6-hour package</div>
             <div class="rate-price">$25<span>/ hour</span></div>
-            <p class="rate-description">Six hours of support at the discounted package rate.</p>
+            <p class="rate-description">Six hours of respite or community support at the discounted rate.</p>
             <div class="rate-divider"></div>
             <div class="rate-total"><strong>$150 package total</strong><br><span class="savings">Save $30</span></div>
             <a class="button primary" href="#contact">Ask about this package</a>
@@ -343,13 +387,13 @@
           <article class="rate-card package">
             <div class="rate-category">9-hour package</div>
             <div class="rate-price">$25<span>/ hour</span></div>
-            <p class="rate-description">Nine hours of support at the discounted package rate.</p>
+            <p class="rate-description">Nine hours of respite or community support at the discounted rate.</p>
             <div class="rate-divider"></div>
             <div class="rate-total"><strong>$225 package total</strong><br><span class="savings">Save $45</span></div>
             <a class="button primary" href="#contact">Ask about this package</a>
           </article>
         </div>
-        <p class="rates-note">Specific services, scheduling arrangements and any applicable additional costs can be confirmed before booking.</p>
+        <p class="rates-note">Package discounts apply to respite and community support, not social work services. Specific services, scheduling arrangements and any additional costs can be confirmed before booking.</p>
       </div>
     </section>
 
@@ -364,7 +408,7 @@
         <div class="faq-list">
           <details>
             <summary>Who can benefit from respite services?</summary>
-            <p class="faq-answer">Individuals requiring companionship and support, including older adults and people living with dementia, as well as family caregivers seeking a well-deserved break.</p>
+            <p class="faq-answer">Youth, adults and seniors who benefit from companionship or support, including people living with disabilities or dementia, and caregivers who need a break.</p>
           </details>
           <details>
             <summary>What activities can be included in a visit?</summary>
@@ -372,11 +416,15 @@
           </details>
           <details>
             <summary>How do the 6- and 9-hour packages work?</summary>
-            <p class="faq-answer">Our regular rate is $30/hour. Save $5 per hour with a 6-hour package ($150) or 9-hour package ($225). Contact us to discuss scheduling.</p>
+            <p class="faq-answer">Respite and community support is $30/hour. Save $5 per hour with a 6-hour package ($150) or 9-hour package ($225). These packages do not apply to social work services ($60/hour).</p>
           </details>
           <details>
             <summary>How do I get started?</summary>
-            <p class="faq-answer">Getting started is simple! Call 519-350-7373 or email evan@rogersrespite.ca to discuss your needs, ask questions, and arrange an initial conversation.</p>
+            <p class="faq-answer">Start with a free 30-minute consultation to discuss your needs and whether the services are a good fit. Call 548-396-1616 or email evan@rogersrespite.ca.</p>
+          </details>
+          <details>
+            <summary>Do you provide psychotherapy?</summary>
+            <p class="faq-answer">No. I do not provide psychotherapy. My social work services include supportive counselling, psychosocial support, care planning, advocacy and community resource navigation.</p>
           </details>
         </div>
         <!-- END EDITABLE FAQ -->
@@ -389,10 +437,10 @@
           <div>
             <p class="eyebrow">Let's connect</p>
             <h2 id="contact-title">Let's talk about the support you're looking for.</h2>
-            <p>Call or email to ask a question, discuss your needs or inquire about availability in Chatham-Kent.</p>
+            <p>Book a free 30-minute consultation to discuss your needs and see whether my services are a good fit. Call or email to inquire about availability in Chatham-Kent.</p>
           </div>
           <div class="contact-actions">
-            <a class="button" href="tel:+15193507373"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.6 3a2 2 0 0 1-.6 1.9L7.8 9.9a16 16 0 0 0 6.3 6.3l1.3-1.3a2 2 0 0 1 1.9-.6l3 .6a2 2 0 0 1 1.7 2Z"/></svg> Call 519-350-7373</a>
+            <a class="button" href="tel:+15483961616"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.6 3a2 2 0 0 1-.6 1.9L7.8 9.9a16 16 0 0 0 6.3 6.3l1.3-1.3a2 2 0 0 1 1.9-.6l3 .6a2 2 0 0 1 1.7 2Z"/></svg> Call 548-396-1616</a>
             <a class="button" href="mailto:evan@rogersrespite.ca"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m2 6 10 7 10-7"/></svg> Email me</a>
             <a class="contact-email" href="mailto:evan@rogersrespite.ca">evan@rogersrespite.ca</a>
           </div>
@@ -404,7 +452,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© <span id="current-year">2026</span> Rogers Respite and Community Services. Chatham-Kent, Ontario.</p>
-      <p>Evan Rogers, MSW, RSW · Registration #843082 · <a href="mailto:evan@rogersrespite.ca">Email</a> · <a href="#top">Back to top ↑</a></p>
+      <p>Evan Rogers, MSW, RSW · Registration #843082 · <a href="tel:+15483961616">548-396-1616</a> · <a href="mailto:evan@rogersrespite.ca">Email</a> · <a href="https://www.instagram.com/rogersrespite/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="#top">Back to top ↑</a></p>
     </div>
   </footer>
   <script>
