@@ -244,6 +244,20 @@
     .calendar-embed-shell { margin: 22px 0 12px; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--pale); }
     .calendar-embed-shell iframe { display: block; width: 100%; height: 660px; border: 0; background: white; }
     @media(max-width:760px) { .calendar-embed-shell iframe { height: 720px; } }
+
+    /* CALENDLY BOOKING */
+    .calendly-service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-bottom:26px; }
+    .calendly-service { display:flex; flex-direction:column; gap:5px; padding:18px 20px; background:#fff; border:1px solid var(--border); border-radius:14px; }
+    .calendly-service strong { color:var(--navy); font-size:15px; line-height:1.4; }
+    .calendly-service span { color:var(--blue-dark); font-size:13px; font-weight:650; }
+    .calendly-booking-shell { background:#fff; border:1px solid var(--border); border-radius:18px; padding:clamp(18px,3vw,32px); box-shadow:var(--shadow); }
+    .calendly-booking-shell > p { color:var(--muted); font-size:14px; max-width:780px; }
+    #calendly-embed { min-width:0; }
+    #calendly-embed.calendly-ready { min-height:710px; }
+    .calendly-setup { padding:26px; background:var(--pale); border:1px solid var(--border); border-radius:12px; }
+    .calendly-setup strong { color:var(--navy); }
+    .calendly-setup p { color:var(--muted); font-size:14px; }
+    @media(max-width:760px) { .calendly-service-grid {grid-template-columns:1fr;} #calendly-embed.calendly-ready {min-height:760px;} }
   </style>
 </head>
 <body>
@@ -391,21 +405,19 @@
 </section>
 <section class="booking" id="booking" aria-labelledby="booking-title">
 <div class="container">
- <div class="section-intro"><p class="eyebrow">Getting started</p><h2 id="booking-title">Book a consultation or request a service.</h2><p class="lead">Start with a free, no-obligation 30-minute conversation. Phone consultations can be booked online. For respite packages, social work support, and in-person visits, contact me to discuss availability and confirm arrangements.</p></div>
- <div class="booking-layout">
-  <div class="booking-panel">
-   <h3>Free 30-minute consultation</h3>
-   <p>Choose a phone call, Google Meet, or an in-person conversation at your home or a mutually agreed public place.</p>
-   <p class="booking-hint"><strong>Phone consultations:</strong> Check available times and book using Google Calendar. For Google Meet, use the calendar if available. For in-person consultations or paid services, please contact me to arrange an appointment.</p>
-   <!-- Official Google Calendar Appointment Scheduling inline embed. -->
-   <div class="calendar-embed-shell">
-    <iframe title="Book a free 30-minute consultation with Rogers Respite" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2p_ugeUbHkRsOZ3J-W8iwuFhKLKPEnKWV3IBjGig17cOnhX74IVSuTsOjKdkQXgX8um69-xQTB?gv=true" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
-   </div>
-   <p class="booking-note">If the calendar does not load, open the booking calendar directly using the button below.</p>
-   <a id="calendar-booking-link" class="button primary" href="https://calendar.app.google/bK4yvYQYsk9VH51j9" target="_blank" rel="noopener noreferrer">Open booking calendar</a>
-   <p class="booking-note">In-person consultations require confirmation of travel and meeting location. Please do not include sensitive health information in your initial request.</p>
-  </div>
-
+ <div class="section-intro"><p class="eyebrow">Appointments &amp; services</p><h2 id="booking-title">Book with Rogers Respite.</h2><p class="lead">Choose a free 30-minute consultation, hourly respite and community support, a discounted package, or social work support. View availability and scheduling details below.</p></div>
+ <div class="calendly-service-grid" aria-label="Available services">
+  <div class="calendly-service"><strong>Free consultation</strong><span>30 minutes · Free</span></div>
+  <div class="calendly-service"><strong>Respite &amp; community support</strong><span>$30 per hour</span></div>
+  <div class="calendly-service"><strong>6-hour respite package</strong><span>$150 total · $25/hour</span></div>
+  <div class="calendly-service"><strong>9-hour respite package</strong><span>$225 total · $25/hour</span></div>
+  <div class="calendly-service"><strong>Social work support</strong><span>$60 per hour · No psychotherapy</span></div>
+ </div>
+ <div class="calendly-booking-shell">
+  <h3>Choose your appointment</h3>
+  <p>Consultations may be by phone, video, or in person at a client's home or an agreed public location. In-person visits and paid services are subject to confirmation. Please do not include sensitive health information in the initial booking.</p>
+  <div id="calendly-embed" aria-label="Calendly online booking"><div class="calendly-inline-widget" data-url="https://calendly.com/rogersrespite?hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div></div>
+  <p class="booking-note">Having trouble viewing the scheduler? <a href="https://calendly.com/rogersrespite" target="_blank" rel="noopener noreferrer">Open Calendly booking in a new tab</a>.</p>
  </div>
 </div>
 </section>
@@ -468,5 +480,8 @@
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
+
+<!-- Calendly official inline widget -->
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
