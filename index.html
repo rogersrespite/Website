@@ -85,7 +85,7 @@
     /* ABOUT */
     .about-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(40px, 7vw, 94px); align-items: center; }
     .portrait { position: relative; aspect-ratio: 4/4.65; border-radius: 22px; border: 1px solid #c8dfe9; background: linear-gradient(145deg,#e6f4fb,#cde6f2); overflow: hidden; }
-    .portrait > img { display: block; width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 2; }
+    .portrait > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; position: relative; z-index: 2; }
     .portrait-placeholder { position: absolute; inset: 0; padding: 26px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--blue-dark); }
     .portrait-placeholder svg { width: 105px; height: 105px; margin-bottom: 23px; opacity: .66; }
     .portrait-placeholder strong { font-size: 20px; letter-spacing: -.025em; }
@@ -135,7 +135,6 @@
     .faq-list summary::after { content: "+"; font-size: 27px; line-height: 1; font-weight: 350; color: var(--blue); }
     .faq-list details[open] summary::after { content: "−"; }
     .faq-answer { max-width: 560px; margin: -3px 36px 22px 0; font-size: 14px; color: var(--muted); }
-    .faq-placeholder { font-style: italic; }
 
     /* CONTACT */
     .contact { padding: 89px 0; }
@@ -146,7 +145,10 @@
     .contact-panel p:not(.eyebrow) { color: #c7d9e5; font-size: 15px; max-width: 590px; margin-bottom: 0; }
     .contact-panel .button { background: #fff; color: var(--blue-dark); position: relative; white-space: nowrap; }
     .contact-panel .button:hover { background: #e9f5fa; }
-    .contact-number { display: block; margin-top: 9px; color: #c6d9e4; font-size: 12px; text-align: center; }
+    .contact-actions { display: flex; flex-direction: column; align-items: stretch; gap: 11px; min-width: min(100%, 265px); }
+    .contact-actions .button { display: flex; width: 100%; }
+    .contact-email { color: #d9eaf4; font-size: 13px; text-align: center; text-underline-offset: 3px; }
+    .contact-email:hover { color: #fff; }
 
     /* FOOTER */
     .site-footer { padding: 30px 0; border-top: 1px solid var(--border); }
@@ -199,7 +201,7 @@
       .contact { padding: 67px 0; }
       .contact-panel { grid-template-columns: 1fr; }
       .contact-panel .button { width: 100%; }
-      .contact-number { text-align: center; }
+      .contact-actions { width: 100%; }
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 5px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
@@ -259,9 +261,9 @@
 
     <section id="about" aria-labelledby="about-title">
       <div class="container about-grid">
-        <!-- YOUR PHOTO: Add a file named profile.jpg alongside index.html. The placeholder automatically disappears. -->
+        <!-- PHOTO: profile.jpg is included in the website files. Replace that image to update your photo. -->
         <div class="portrait">
-          <img src="profile.jpg" alt="Portrait of Evan Rogers" width="700" height="820" loading="lazy" onerror="this.remove()">
+          <img src="profile.jpg" alt="Evan Rogers holding framed Bachelor and Master of Social Work diplomas" width="1200" height="1600" loading="lazy" onerror="this.remove()">
           <div class="portrait-placeholder" aria-label="Photo placeholder">
             <svg viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><circle cx="50" cy="30" r="17"/><path d="M17 85c2-22 15-34 33-34s31 12 33 34"/></svg>
             <strong>Your photo goes here</strong>
@@ -356,25 +358,25 @@
         <div class="section-intro">
           <p class="eyebrow">Frequently asked questions</p>
           <h2 id="faq-title">Good questions deserve clear answers.</h2>
-          <p class="lead">This section is ready for your FAQs. Open each question to see where to add your answer.</p>
+          <p class="lead">Find answers to common questions about respite services, activities, packages and getting started.</p>
         </div>
         <!-- EDIT FAQ: Replace the question and answer text inside each <details> below. Duplicate a <details> block to add another question. -->
         <div class="faq-list">
           <details>
             <summary>Who can benefit from respite services?</summary>
-            <p class="REPLACE THIS">Add your answer here. You can explain who you serve and how you determine whether the service is a good fit.</p>
+            <p class="faq-answer">Individuals requiring companionship and support, including older adults and people living with dementia, as well as family caregivers seeking a well-deserved break.</p>
           </details>
           <details>
             <summary>What activities can be included in a visit?</summary>
-            <p class="REPLACE THIS">Add your answer here. Describe the types of activities and outings you offer.</p>
+            <p class="faq-answer">Activities are tailored to individual interests and needs and may include conversation, walks, recreational activities, scenic drives, and community outings.</p>
           </details>
           <details>
             <summary>How do the 6- and 9-hour packages work?</summary>
-            <p class="REPLACE THIS">Add your answer here. Clarify booking, payment and how package hours may be used.</p>
+            <p class="faq-answer">Our regular rate is $30/hour. Save $5 per hour with a 6-hour package ($150) or 9-hour package ($225). Contact us to discuss scheduling.</p>
           </details>
           <details>
             <summary>How do I get started?</summary>
-            <p class="REPLACE THIS">Add your answer here. Explain your inquiry, introductory conversation and booking process.</p>
+            <p class="faq-answer">Getting started is simple! Call 519-350-7373 or email evan@rogersrespite.ca to discuss your needs, ask questions, and arrange an initial conversation.</p>
           </details>
         </div>
         <!-- END EDITABLE FAQ -->
@@ -387,11 +389,12 @@
           <div>
             <p class="eyebrow">Let's connect</p>
             <h2 id="contact-title">Let's talk about the support you're looking for.</h2>
-            <p>Call to ask a question, discuss your needs or inquire about availability in Chatham-Kent.</p>
+            <p>Call or email to ask a question, discuss your needs or inquire about availability in Chatham-Kent.</p>
           </div>
-          <div>
+          <div class="contact-actions">
             <a class="button" href="tel:+15193507373"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.6 3a2 2 0 0 1-.6 1.9L7.8 9.9a16 16 0 0 0 6.3 6.3l1.3-1.3a2 2 0 0 1 1.9-.6l3 .6a2 2 0 0 1 1.7 2Z"/></svg> Call 519-350-7373</a>
-            <span class="contact-number">Rogers Respite and Community Services</span>
+            <a class="button" href="mailto:evan@rogersrespite.ca"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m2 6 10 7 10-7"/></svg> Email me</a>
+            <a class="contact-email" href="mailto:evan@rogersrespite.ca">evan@rogersrespite.ca</a>
           </div>
         </div>
       </div>
@@ -401,7 +404,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© <span id="current-year">2026</span> Rogers Respite and Community Services. Chatham-Kent, Ontario.</p>
-      <p>Evan Rogers, MSW, RSW · Registration #843082 · <a href="#top">Back to top ↑</a></p>
+      <p>Evan Rogers, MSW, RSW · Registration #843082 · <a href="mailto:evan@rogersrespite.ca">Email</a> · <a href="#top">Back to top ↑</a></p>
     </div>
   </footer>
   <script>
