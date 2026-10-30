@@ -258,7 +258,10 @@
     .calendly-setup strong { color:var(--navy); }
     .calendly-setup p { color:var(--muted); font-size:14px; }
     @media(max-width:760px) { .calendly-service-grid {grid-template-columns:1fr;} #calendly-embed.calendly-ready {min-height:760px;} }
-  </style>
+  .intake-section { background: #fff; border-top: 1px solid var(--border); }
+.intake-panel { padding: clamp(12px, 2.5vw, 28px); border: 1px solid var(--border); border-radius: 18px; background: var(--white); box-shadow: var(--shadow); overflow: hidden; }
+.intake-panel iframe { max-width: 100%; }
+</style>
 </head>
 <body>
 <!-- Reusable logo artwork. The colour comes from --blue in CSS above. -->
@@ -275,6 +278,7 @@
 <a href="#services">Services</a>
 
 <a href="#booking">Booking</a>
+<a href="#intake">Request Services</a>
  <a href="#payments">Payments</a>
  <a href="#faq">FAQ</a>
 <a href="#contact">Contact</a>
@@ -386,6 +390,21 @@
    <a class="button primary" href="https://square.link/u/aQ8vfab4?src=embed" target="_blank" rel="noopener noreferrer">Pay now securely ↗</a>
   </div>
  </div>
+</section>
+<section class="intake-section" id="intake" aria-labelledby="intake-title">
+<div class="container">
+<div class="section-intro">
+<p class="eyebrow">Getting started</p>
+<h2 id="intake-title">Request services.</h2>
+<p class="lead">Tell us a little about the support you are looking for using the form below. Completing this form does not guarantee service availability or establish a client relationship.</p>
+<p>Please avoid including detailed medical or other sensitive information unless specifically requested through an appropriately secure intake process.</p>
+</div>
+<div class="intake-panel">
+<script type="text/javascript" src="https://form.jotform.com/jsform/263027593754060"></script>
+<noscript><p>To complete the service inquiry, <a href="https://form.jotform.com/263027593754060" target="_blank" rel="noopener noreferrer">open the form in a new tab</a>.</p></noscript>
+</div>
+<p class="booking-note">If the form does not load, <a href="https://form.jotform.com/263027593754060" target="_blank" rel="noopener noreferrer">open the request form directly</a>.</p>
+</div>
 </section>
 <section aria-labelledby="faq-title" class="faq" id="faq">
 <div class="container faq-grid">
