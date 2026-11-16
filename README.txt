@@ -1,0 +1,1 @@
+Upload index.html, sitemap.xml, robots.txt and the four service folders to the root of your GitHub Pages repository. Keep existing profile.jpg and client PDF files in place. Each service folder must contain its index.html. Verify links and booking after publishing. Submit the updated sitemap to Google Search Console.
