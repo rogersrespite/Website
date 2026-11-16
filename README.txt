@@ -1,1 +1,1 @@
-Upload index.html, sitemap.xml, robots.txt and the four service folders to the root of your GitHub Pages repository. Keep existing profile.jpg and client PDF files in place. Each service folder must contain its index.html. Verify links and booking after publishing. Submit the updated sitemap to Google Search Console.
+Upload index.html, sitemap.xml and robots.txt to the ROOT of your GitHub Pages repository. Keep existing profile.jpg and PDFs. This is a single-page site: all service navigation uses #section anchors. Do not upload the old four service folders.
